@@ -68,3 +68,5 @@ fastlane/screenshots
 fastlane/test_output
 
 *.DS_Store
+DouBan.xcodeproj/project.pbxproj
+DouBan.xcodeproj/project.xcworkspace/contents.xcworkspacedata
