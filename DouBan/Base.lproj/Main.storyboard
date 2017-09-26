@@ -1,8 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -10,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="DBFM" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="行走的CD" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -19,37 +22,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="69V-Sl-EfO" userLabel="底部歌曲封面">
-                                <frame key="frameInset" width="414" height="736"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="69V-Sl-EfO" userLabel="底部歌曲封面">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Sai-c1-wmP" userLabel="歌曲封面大图">
-                                <frame key="frameInset" minX="107" minY="30" width="200" height="200"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Sai-c1-wmP" userLabel="歌曲封面大图" customClass="EkoImage" customModule="行走的CD" customModuleProvider="target">
+                                <rect key="frame" x="88" y="30" width="200" height="200"/>
+                                <color key="backgroundColor" red="0.077329277200000004" green="1" blue="0.041811963059999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="bIx-F4-sYJ"/>
                                     <constraint firstAttribute="width" constant="200" id="ivs-jb-DBr"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="timeBg" translatesAutoresizingMaskIntoConstraints="NO" id="9GE-t2-z1E" userLabel="时间背景view">
-                                <frame key="frameInset" minX="172" minY="95" width="70" height="70"/>
+                            <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timeBg.png" translatesAutoresizingMaskIntoConstraints="NO" id="9GE-t2-z1E" userLabel="时间背景view" customClass="EkoImage" customModule="行走的CD" customModuleProvider="target">
+                                <rect key="frame" x="153" y="95" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="dCn-fJ-Jj6"/>
                                     <constraint firstAttribute="height" constant="70" id="jk0-C0-ZjL"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="awj-o9-GgJ" userLabel="播放时间label">
-                                <frame key="frameInset" minX="172" minY="119" width="70" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="awj-o9-GgJ" userLabel="播放时间label">
+                                <rect key="frame" x="165" y="119" width="46" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="progressBg2" translatesAutoresizingMaskIntoConstraints="NO" id="4eY-ZH-5sR" userLabel="进度条背景">
-                                <frame key="frameInset" minY="248" width="412" height="40"/>
+                            <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="progressBg2.png" translatesAutoresizingMaskIntoConstraints="NO" id="4eY-ZH-5sR" userLabel="进度条背景">
+                                <rect key="frame" x="-4" y="248" width="381" height="40"/>
                             </imageView>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ea6-4E-Gqs" userLabel="进度条view">
-                                <frame key="frameInset" minY="248" width="414" height="40"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ea6-4E-Gqs" userLabel="进度条view">
+                                <rect key="frame" x="-4" y="248" width="383" height="40"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="progressBg" translatesAutoresizingMaskIntoConstraints="NO" id="5kC-dT-cvp" userLabel="进度条图片">
-                                        <frame key="frameInset" width="14" height="40"/>
+                                    <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="progressBg.png" translatesAutoresizingMaskIntoConstraints="NO" id="5kC-dT-cvp" userLabel="进度条图片">
+                                        <rect key="frame" x="0.0" y="0.0" width="14" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
@@ -58,94 +63,78 @@
                                     <constraint firstAttribute="height" constant="40" id="gAh-qy-r9M"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="be4-m2-YBt" userLabel="播放顺序按钮">
-                                <frame key="frameInset" minX="56" minY="256" width="25" height="25"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="be4-m2-YBt" userLabel="播放顺序按钮" customClass="OrderButton" customModule="行走的CD" customModuleProvider="target">
+                                <rect key="frame" x="37" y="256" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="5pL-fZ-HRs"/>
                                     <constraint firstAttribute="height" constant="25" id="dvF-tM-y77"/>
                                 </constraints>
-                                <state key="normal" image="order1">
+                                <state key="normal" image="order1.png">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tWl-Vr-MJb" userLabel="上一首按钮">
-                                <frame key="frameInset" minX="125" minY="256" width="25" height="25"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tWl-Vr-MJb" userLabel="上一首按钮">
+                                <rect key="frame" x="106" y="256" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="fRR-dd-g04"/>
                                     <constraint firstAttribute="height" constant="25" id="x2C-Ik-zdd"/>
                                 </constraints>
-                                <state key="normal" image="pre">
+                                <state key="normal" image="pre.png">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Dp-Vj-DzT" userLabel="播放暂停按钮">
-                                <frame key="frameInset" minX="192" minY="251" width="34" height="34"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Dp-Vj-DzT" userLabel="播放暂停按钮" customClass="EkoButton" customModule="行走的CD" customModuleProvider="target">
+                                <rect key="frame" x="173" y="251" width="34" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="TMe-mt-P7n"/>
                                     <constraint firstAttribute="width" constant="34" id="umM-mV-S6O"/>
                                 </constraints>
-                                <state key="normal" image="pause">
+                                <state key="normal" image="play.png">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vBE-eQ-Y7g" userLabel="频道选择按钮">
-                                <frame key="frameInset" minX="337" minY="256" width="25" height="25"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vBE-eQ-Y7g" userLabel="频道选择按钮">
+                                <rect key="frame" x="318" y="256" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="n0Y-4f-YZ4"/>
                                     <constraint firstAttribute="height" constant="25" id="v4y-73-7jb"/>
                                 </constraints>
-                                <state key="normal" image="channel">
+                                <state key="normal" image="channel.png">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="nbT-b0-i3L" kind="show" id="uFw-IN-Yoy"/>
+                                    <segue destination="nbT-b0-i3L" kind="presentation" modalPresentationStyle="overCurrentContext" id="uFw-IN-Yoy"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fEX-sr-sXM" userLabel="歌曲列表">
-                                <frame key="frameInset" minY="293" width="414" height="443"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fEX-sr-sXM" userLabel="歌曲列表">
+                                <rect key="frame" x="-4" y="293" width="383" height="374"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="douban" textLabel="hT3-cu-pfX" detailTextLabel="nJK-BF-ume" style="IBUITableViewCellStyleSubtitle" id="nSR-t0-EkB">
-                                        <rect key="frame" x="0.0" y="22" width="414" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="douban" id="l1w-NK-wqX">
+                                        <rect key="frame" x="0.0" y="22" width="383" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nSR-t0-EkB" id="YL6-7c-Uw5">
-                                            <frame key="frameInset" width="414" height="43"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="l1w-NK-wqX" id="M0T-eX-1op">
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hT3-cu-pfX">
-                                                    <frame key="frameInset" minX="15" minY="5" width="32" height="20"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nJK-BF-ume">
-                                                    <frame key="frameInset" minX="15" minY="25" width="41" height="14"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Us4-zZ-pjF" userLabel="下一首按钮">
-                                <frame key="frameInset" minX="262" minY="256" width="25" height="25"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Us4-zZ-pjF" userLabel="下一首按钮">
+                                <rect key="frame" x="243" y="256" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="voD-u3-Nvh"/>
                                     <constraint firstAttribute="height" constant="25" id="xDk-Js-jJU"/>
                                 </constraints>
-                                <state key="normal" image="next">
+                                <state key="normal" image="next.png">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
-                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VXu-9S-iEz" userLabel="显示歌词按钮">
-                                <frame key="frameInset" minX="365" minY="28" width="40" height="40"/>
-                                <state key="normal" image="lrc"/>
+                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VXu-9S-iEz" userLabel="显示歌词按钮">
+                                <rect key="frame" x="330" y="28" width="40" height="40"/>
+                                <state key="normal" image="lrc.png"/>
                                 <connections>
-                                    <segue destination="cfc-GJ-mxi" kind="show" id="KO3-e0-OhE"/>
+                                    <segue destination="cfc-GJ-mxi" kind="presentation" identifier="showLRC" modalPresentationStyle="overCurrentContext" id="KO3-e0-OhE"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -185,15 +174,26 @@
                             <constraint firstAttribute="trailing" secondItem="69V-Sl-EfO" secondAttribute="trailing" id="xQV-aT-kbM"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bg" destination="69V-Sl-EfO" id="fAn-Tr-6Jb"/>
+                        <outlet property="btnNext" destination="Us4-zZ-pjF" id="DWQ-bm-Fx6"/>
+                        <outlet property="btnOrder" destination="be4-m2-YBt" id="9Pe-ve-iBh"/>
+                        <outlet property="btnPlay" destination="3Dp-Vj-DzT" id="pYP-8m-vfG"/>
+                        <outlet property="btnPre" destination="tWl-Vr-MJb" id="PmH-On-5Uj"/>
+                        <outlet property="iv" destination="Sai-c1-wmP" id="QOz-2y-rEM"/>
+                        <outlet property="playTime" destination="awj-o9-GgJ" id="Uwr-hc-Fei"/>
+                        <outlet property="progress" destination="5kC-dT-cvp" id="LfS-hi-9hS"/>
+                        <outlet property="tv" destination="fEX-sr-sXM" id="50S-nf-AoA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="300" y="283"/>
         </scene>
-        <!--Table View Controller-->
+        <!--LRCVC-->
         <scene sceneID="paS-82-r1U">
             <objects>
-                <tableViewController id="cfc-GJ-mxi" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="showLRC" id="cfc-GJ-mxi" customClass="LRCVC" customModule="行走的CD" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="30" sectionHeaderHeight="28" sectionFooterHeight="28" id="P32-JR-S4N">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -203,7 +203,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="27"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bHB-pE-3DB" id="xUd-3h-XFr">
-                                    <frame key="frameInset" width="375" height="26"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="26.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -218,10 +218,10 @@
             </objects>
             <point key="canvasLocation" x="1134" y="564"/>
         </scene>
-        <!--View Controller-->
+        <!--Channel Controller-->
         <scene sceneID="Ebu-oA-oAi">
             <objects>
-                <viewController id="nbT-b0-i3L" sceneMemberID="viewController">
+                <viewController id="nbT-b0-i3L" customClass="ChannelController" customModule="行走的CD" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Sgj-NT-JlF"/>
                         <viewControllerLayoutGuide type="bottom" id="zWU-9g-K3y"/>
@@ -230,21 +230,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="选择频道" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x51-cu-11r">
-                                <frame key="frameInset" minX="4" minY="20" width="406" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="选择频道" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x51-cu-11r">
+                                <rect key="frame" x="0.0" y="20" width="375" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="QgY-J5-bhD">
-                                <frame key="frameInset" minX="4" minY="54" width="406" height="682"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="QgY-J5-bhD">
+                                <rect key="frame" x="0.0" y="55" width="375" height="612"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="channel" id="vVG-H2-zJ9">
-                                        <rect key="frame" x="0.0" y="22" width="406" height="44"/>
+                                        <rect key="frame" x="0.0" y="22" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vVG-H2-zJ9" id="efE-wD-bGL">
-                                            <frame key="frameInset" width="406" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -262,6 +262,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="QgY-J5-bhD" secondAttribute="trailing" constant="-16" id="xyT-gm-I76"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tv" destination="QgY-J5-bhD" id="dFM-Lu-em9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cyX-kZ-L4h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -269,15 +272,15 @@
         </scene>
     </scenes>
     <resources>
-        <image name="channel" width="40" height="40"/>
-        <image name="logo" width="200" height="200"/>
-        <image name="lrc" width="40" height="40"/>
-        <image name="next" width="40" height="40"/>
-        <image name="order1" width="40" height="40"/>
-        <image name="pause" width="40" height="40"/>
-        <image name="pre" width="40" height="40"/>
-        <image name="progressBg" width="15" height="40"/>
-        <image name="progressBg2" width="15" height="40"/>
-        <image name="timeBg" width="70" height="70"/>
+        <image name="channel.png" width="40" height="40"/>
+        <image name="logo.png" width="200" height="200"/>
+        <image name="lrc.png" width="40" height="40"/>
+        <image name="next.png" width="40" height="40"/>
+        <image name="order1.png" width="40" height="40"/>
+        <image name="play.png" width="40" height="40"/>
+        <image name="pre.png" width="40" height="40"/>
+        <image name="progressBg.png" width="15" height="40"/>
+        <image name="progressBg2.png" width="15" height="40"/>
+        <image name="timeBg.png" width="70" height="70"/>
     </resources>
 </document>

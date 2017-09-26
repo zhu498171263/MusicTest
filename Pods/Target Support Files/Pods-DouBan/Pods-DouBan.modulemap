@@ -1,0 +1,6 @@
+framework module Pods_DouBan {
+  umbrella header "Pods-DouBan-umbrella.h"
+
+  export *
+  module * { export * }
+}

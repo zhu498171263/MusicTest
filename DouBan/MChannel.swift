@@ -9,5 +9,11 @@
 import UIKit
 
 class MChannel: NSObject {
+    var channel_id:String = ""
+    var channel_name:String = ""
+    init(channel_id:String,channel_name:String) {
+        self.channel_id = channel_id
+        self.channel_name = channel_name
+    }
 
 }

@@ -9,15 +9,21 @@
 import UIKit
 
 class LRCVC: UITableViewController {
+    
+    //申明代理
+    var delegate:LRClProtocol?
+    var arrLrc:[LRCModel]!
+    let headerHeight:CGFloat = 50.0
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        view.alpha = 0.8
+        self.tableView.backgroundColor = UIColor.white
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        //设定歌词cell的高度，以及高度随着歌词的行数自动变高
+        self.tableView.estimatedRowHeight = 44
+        self.tableView.rowHeight = UITableViewAutomaticDimension
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,67 +35,55 @@ class LRCVC: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return arrLrc.count
     }
 
-    /*
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let h = headerHeight
+        let hView:UIView? = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: h))
+        hView?.backgroundColor = UIColor.clear
+        return hView
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return headerHeight
+    }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath as IndexPath)
+        cell.selectionStyle = UITableViewCellSelectionStyle.none
+        cell.textLabel?.font = UIFont.systemFont(ofSize: 14)
+        cell.textLabel?.textAlignment = NSTextAlignment.center
+        cell.textLabel?.text = arrLrc[indexPath.row].word
+        cell.textLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
+        cell.textLabel?.numberOfLines = 0
+        
         return cell
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.onCloseLRC()
+        //关闭当前界面
+        self.dismiss(animated: true, completion: nil)
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    func onMoveToIndex(index:Int){
+        self.tableView.reloadData()
+        let indexPath:IndexPath = IndexPath.init(row: index, section: 0)
+        let cell = self.tableView.cellForRow(at: indexPath as IndexPath)
+        cell?.textLabel?.font = UIFont(name: "HelveticaNeue-Bold", size: 16)
+        cell?.textLabel?.backgroundColor = UIColor.clear
+        self.tableView.scrollToRow(at: indexPath as IndexPath, at: UITableViewScrollPosition.middle, animated: true)
     }
-    */
 
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
 
-    }
-    */
+}
 
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+protocol LRClProtocol{
+    //回调方法，将频道id传回到代理中
+    func onCloseLRC()
 }

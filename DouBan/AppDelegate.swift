@@ -16,12 +16,63 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        UIApplication.shared.beginReceivingRemoteControlEvents()
+        
         return true
+    }
+    
+    //后台播放响应控制所必须的
+    override func becomeFirstResponder() -> Bool {
+        print("\(canBecomeFirstResponder)")
+        return true
+    }
+    
+    //后台播放控制事件响应
+    override func remoteControlReceived(with event: UIEvent?) {
+        let vc = self.window?.rootViewController
+        if (vc?.isEqual(ViewController.self) != nil) {
+            
+            if event?.type == UIEventType.remoteControl {
+                switch event!.subtype {
+                case UIEventSubtype.remoteControlTogglePlayPause:
+                    
+                    print("暂停播放")
+                case UIEventSubtype.remoteControlNextTrack:
+                    (vc as! ViewController).onRemotePlayNext()
+                    print("下一首")
+                case UIEventSubtype.remoteControlPreviousTrack:
+                    (vc as! ViewController).onRemotePlayPre()
+                    print("上一首")
+                case UIEventSubtype.remoteControlPause:
+                    (vc as! ViewController).onRemotePause()
+                    print("暂停")
+                case UIEventSubtype.remoteControlPlay:
+                    (vc as! ViewController).onRemotePlay()
+                    print("播放")
+                default:
+                    print("呵呵")
+                }
+            }
+            
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+        
+        
+//        AVAudioSession session=[AVAudioSession sharedInstance]
+//        [session setActive:YES error:nil]
+//        //后台播放
+//        [session setCategory:AVAudioSessionCategoryPlayback error:nil]
+//        //这样做，可以在按home键进入后台后 ，播放一段时间，几分钟吧。但是不能持续播放网络歌曲，若需要持续播放网络歌曲，还需要申请后台任务id，具体做法是：
+//        _bgTaskId=[AppDelegate backgroundPlayerID:_bgTaskId]
+//        //其中的_bgTaskId是后台任务UIBackgroundTaskIdentifier _bgTaskId;
+//        
+//        try
+//            {
+//        AVAudioSession.sharedInstance().setActive(true)
+//        }
+        
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
